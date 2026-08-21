@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>(Decode-Labs)Grove &amp; Roast — Small-batch coffee, brewed with intent</title>
+<meta name="description" content="A mini storefront for small-batch coffee and pour-over gear.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#top" class="logo" aria-label="Grove and Roast home">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 8h13a3 3 0 0 1 0 6h-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M4 8v7a4 4 0 0 0 4 4h4a4 4 0 0 0 4-4v-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M7 4c-.6.8-.6 1.6 0 2.4M11 4c-.6.8-.6 1.6 0 2.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <span> (Decode-Labs)Grove &amp; Roast</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="cart-toggle" id="cartToggle" aria-expanded="false" aria-controls="cartDrawer">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M3 4h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L20 8H6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="9" cy="20" r="1.4" fill="currentColor"/>
+        <circle cx="17" cy="20" r="1.4" fill="currentColor"/>
+      </svg>
+      <span class="visually-hidden">Open cart,</span>
+      <span class="cart-count" id="cartCount" aria-hidden="true">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">Small-batch · Roasted weekly</p>
+        <h1>Coffee, brewed<br><em>with intent.</em></h1>
+        <p class="hero-copy">Single-origin beans and pour-over gear for people who taste the difference between a Tuesday cup and a good one.</p>
+        <a href="#shop" class="btn btn-primary">Browse the shop</a>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 280 280" width="100%" height="100%">
+          <circle cx="140" cy="140" r="130" fill="var(--ethereal-blue)" opacity="0.35"/>
+          <g class="steam">
+            <path class="steam-path steam-1" d="M110 90c-8-10 8-18 0-30" stroke="var(--mocha-deep)" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path class="steam-path steam-2" d="M140 90c-8-12 8-20 0-34" stroke="var(--mocha-deep)" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path class="steam-path steam-3" d="M170 90c-8-10 8-18 0-30" stroke="var(--mocha-deep)" stroke-width="3" stroke-linecap="round" fill="none"/>
+          </g>
+          <path d="M80 120h110l-8 70a20 20 0 0 1-20 18h-54a20 20 0 0 1-20-18l-8-70z" fill="var(--surface)" stroke="var(--ink)" stroke-width="3"/>
+          <path d="M190 130h14a16 16 0 0 1 0 32h-10" fill="none" stroke="var(--ink)" stroke-width="3"/>
+          <path d="M92 128h96" stroke="var(--mocha)" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="shop" id="shop" aria-labelledby="shop-heading">
+    <div class="shop-inner">
+      <h2 id="shop-heading">This week's selection</h2>
+      <p class="section-sub">Every bag roasted to order. Every dot below tells you how dark.</p>
+
+      <div class="product-grid" id="productGrid">
+      </div>
+    </div>
+  </section>
+
+  <section class="photo-showcase" aria-hidden="true">
+    <img
+      src="./images/Home.png"
+      alt="A burlap sack of roasted coffee beans with a wooden scoop"
+      loading="lazy"
+      onerror="this.parentElement.classList.add('photo-failed')"
+    />
+    <div class="photo-caption">
+      <span>Real beans, real roastery — Photo by Sergey Kotenev on Unsplash</span>
+    </div>
+  </section>
+
+  <section class="about" id="about" aria-labelledby="about-heading">
+    <div class="about-inner">
+      <h2 id="about-heading">Why the beans matter</h2>
+      <p>We work with four family farms across my country, paying above fair-trade rate, and roast in batches small enough that nothing sits on a shelf for more than a week. </p>
+    </div>
+  </section>
+
+  <section class="how" id="how" aria-labelledby="how-heading">
+    <div class="how-inner">
+      <h2 id="how-heading">How it works</h2>
+      <div class="how-grid">
+        <article class="how-step">
+          <div class="how-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M4 8h13a3 3 0 0 1 0 6h-1M4 8v7a4 4 0 0 0 4 4h4a4 4 0 0 0 4-4v-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <span class="how-num">01</span>
+          <h3>You order</h3>
+          <p>Pick a roast or a pack. We confirm same day.</p>
+        </article>
+        <article class="how-step">
+          <div class="how-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <span class="how-num">02</span>
+          <h3>We roast</h3>
+          <p>Small batches, roasted within 48 hours of your order — never off a warehouse shelf.</p>
+        </article>
+        <article class="how-step">
+          <div class="how-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M3 12l8-8 8 8M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="how-num">03</span>
+          <h3>It ships</h3>
+          <p>Sealed fresh, on your doorstep in 2-4 days depending on where you are.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" aria-labelledby="testimonials-heading">
+    <div class="testimonials-inner">
+      <h2 id="testimonials-heading">What people say</h2>
+      <div class="testimonial-grid">
+        <blockquote class="testimonial-card">
+          <p>"The Sumatra Dark Reserve is the best i ever tasted"</p>
+          <cite>— Shiv.</cite>
+        </blockquote>
+        <blockquote class="testimonial-card">
+          <p>"Roasted-to-order actually means something here. You can taste the difference from a supermarket bag immediately."</p>
+          <cite>— Shivyansh</cite>
+        </blockquote>
+        <blockquote class="testimonial-card">
+          <p>"Ordered the dripper and a bag of the House Blend as a starter kit. "</p>
+          <cite>— Shivyansh Thakur</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" aria-labelledby="faq-heading">
+    <div class="faq-inner">
+      <h2 id="faq-heading">Frequently asked</h2>
+      <div class="faq-list" id="faqList">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How fresh is "roasted weekly," really?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Every bag is roasted within 48 hours of your order going out — we don't pre-roast to stock a shelf. If it's sitting in our warehouse, it's for days, not months.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do you ship internationally?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Currently we ship within India only, with 2-4 day delivery depending on your location.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What if I don't know my grind size?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Tell us your brew method at checkout (drip, pour-over, French press, espresso) and we'll grind to match before shipping.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I subscribe for deals?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes — weekly or monthly subscriptions are available at checkout, and you can pause or cancel anytime.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter" aria-labelledby="newsletter-heading">
+    <div class="newsletter-inner">
+      <h2 id="newsletter-heading">Get first pick of new roasts</h2>
+      <p>One email a week, when a new batch drops. No spam, unsubscribe anytime.</p>
+      <form class="newsletter-form" id="newsletterForm" novalidate>
+        <div class="form-field">
+          <label for="newsletterEmail" class="visually-hidden">Email address</label>
+          <input type="email" id="newsletterEmail" name="email" placeholder="shiv@example.com" required autocomplete="email">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </div>
+        <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="footer">
+  <div class="footer-inner">
+    <div>
+      <p class="footer-logo">Grove &amp; Roast</p>
+      <p>Roasted in small batches. Shipped fresh, always.</p>
+    </div>
+    <div class="footer-links">
+      <p><strong>Contact: </strong>Shivyansh Thakur</p>
+      <p><a href="mailto:hello@shiv.example">shiv@.example</a></p>
+      <p>Mon–Fri, 9am–5pm</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay" hidden></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+  <div class="cart-header">
+    <h2>Your cart</h2>
+    <button class="cart-close" id="cartClose" aria-label="Close cart">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="cart-items" id="cartItems" aria-live="polite">
+    <p class="cart-empty" id="cartEmpty">Your cart is empty. Go find a roast you like.</p>
+  </div>
+
+  <div class="cart-footer">
+    <div class="cart-total-row">
+      <span>Subtotal</span>
+      <span id="cartTotal">₹0.00</span>
+    </div>
+    <button class="btn btn-primary btn-full" id="checkoutBtn" disabled>Checkout</button>
+  </div>
+</aside>
+
+<script src="js/script.js"></script>
+</body>
+</html>
