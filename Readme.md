@@ -39,3 +39,5 @@ A lightweight, single-page coffee and pour-over gear storefront built with pure 
 │   └── .jpg
 |
 └── README.md
+
+Live Link: coffeestorefront.netlify.app/
