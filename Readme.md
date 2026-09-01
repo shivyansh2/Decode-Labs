@@ -40,4 +40,4 @@ A lightweight, single-page coffee and pour-over gear storefront built with pure 
 |
 └── README.md
 
-Live Link: coffeestorefront.netlify.app/
+Live Link: https://coffeestorefront.netlify.app/
